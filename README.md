@@ -4,7 +4,10 @@
 
 > Free-first, categorized, practical. From browser tools you can use in 5 minutes to CLI automation and link-analysis platforms used by professionals.
 
-**Live version:** [Enable GitHub Pages](https://masterxhackerx420-oss.github.io/osint-tools-array/) for the interactive site with search and filters. Images embedded in the live version.
+### Live Interactive Version
+**[https://masterxhackerx420-oss.github.io/osint-tools-array/](https://masterxhackerx420-oss.github.io/osint-tools-array/)**
+
+Searchable & filterable tool list with the LULZ / WolfSec images embedded in the header.
 
 ---
 

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSINT Tools Array — Beginners to Experts</title>
+<style>
+  :root { --bg: #0a0a0f; --card: #14141c; --accent: #ff6b35; --accent2: #ff9f1c; --text: #e8e8f0; --muted: #8888a0; --border: #2a2a3a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  header { background: linear-gradient(180deg, #1a0a00 0%, var(--bg) 100%); padding: 3rem 1.5rem 2rem; text-align: center; border-bottom: 1px solid var(--border); }
+  header h1 { font-size: 2.8rem; margin: 0 0 0.5rem; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  header p { color: var(--muted); max-width: 700px; margin: 0.5rem auto; }
+  .hero { margin: 2rem 0; font-size: 1.1rem; color: var(--accent2); }
+  .controls { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+  input, select { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 0.75rem 1rem; border-radius: 8px; font-size: 1rem; }
+  input { flex: 1; min-width: 200px; }
+  .tools { max-width: 1100px; margin: 0 auto 3rem; padding: 0 1rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
+  .tool { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; transition: transform 0.2s, border-color 0.2s; }
+  .tool:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .tool h3 { margin: 0 0 0.4rem; color: var(--accent2); }
+  .badge { display: inline-block; font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; margin-right: 0.3rem; background: #222; }
+  .beginner { background: #1a3a1a; color: #6f6; }
+  .intermediate { background: #3a2a1a; color: #fa6; }
+  .expert { background: #3a1a1a; color: #f66; }
+  .tool a { color: var(--accent); text-decoration: none; }
+  .tool a:hover { text-decoration: underline; }
+  footer { text-align: center; padding: 2rem; color: var(--muted); border-top: 1px solid var(--border); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>OSINT Tools Array</h1>
+  <p>A large curated collection of Open Source Intelligence tools — from browser-only beginners to expert automation and link analysis.</p>
+  <p>Free-first • OPSEC aware • Updated October 2026</p>
+  <div class="hero">LULZ / WolfSec branded OSINT resource. Dark cyber aesthetic inspired by the project images.</div>
+</header>
+<div class="controls">
+  <input type="search" id="search" placeholder="Search tools, categories, or keywords...">
+  <select id="level">
+    <option value="">All levels</option>
+    <option value="beginner">Beginner</option>
+    <option value="intermediate">Intermediate</option>
+    <option value="expert">Expert</option>
+  </select>
+  <select id="category">
+    <option value="">All categories</option>
+    <option value="username">Username</option>
+    <option value="email">Email</option>
+    <option value="domain">Domain / IP</option>
+    <option value="social">Social / People</option>
+    <option value="image">Images / Metadata</option>
+    <option value="archive">Archives</option>
+    <option value="geo">Geolocation</option>
+    <option value="breach">Breach / Dark</option>
+    <option value="framework">Frameworks</option>
+  </select>
+</div>
+<main class="tools" id="tools"></main>
+<footer>
+  <p>Educational use only. Public data. Respect laws and ToS. OPSEC first.</p>
+  <p>Source: <a href="https://github.com/masterxhackerx420-oss/osint-tools-array" style="color:var(--accent)">GitHub repo</a> • LULZ / WolfSec energy</p>
+</footer>
+<script>
+const tools = [
+  { name: "OSINT Framework", level: "beginner", cat: "framework", desc: "The master interactive map of free OSINT resources by category.", url: "https://osintframework.com" },
+  { name: "WhatsMyName", level: "beginner", cat: "username", desc: "Fast web-based username search across 700+ curated sites. No install.", url: "https://whatsmyname.app" },
+  { name: "Sherlock", level: "intermediate", cat: "username", desc: "Classic CLI username checker (~400 sites). Fast and scriptable.", url: "https://github.com/sherlock-project/sherlock" },
+  { name: "Maigret", level: "intermediate", cat: "username", desc: "Deep username OSINT: 3000+ sites, profile extraction, recursive search, rich reports.", url: "https://github.com/soxoj/maigret" },
+  { name: "Have I Been Pwned", level: "beginner", cat: "email", desc: "Check if an email appears in known data breaches. Essential first step.", url: "https://haveibeenpwned.com" },
+  { name: "EmailRep", level: "beginner", cat: "email", desc: "Email reputation and risk signals.", url: "https://emailrep.io" },
+  { name: "theHarvester", level: "intermediate", cat: "email", desc: "Gather emails, subdomains, hosts, and employee names from public sources.", url: "https://github.com/laramies/theHarvester" },
+  { name: "crt.sh", level: "beginner", cat: "domain", desc: "Certificate transparency logs — excellent for discovering subdomains.", url: "https://crt.sh" },
+  { name: "Shodan", level: "intermediate", cat: "domain", desc: "Search engine for internet-connected devices and exposed services.", url: "https://www.shodan.io" },
+  { name: "Censys", level: "intermediate", cat: "domain", desc: "Internet-wide scanning of hosts, certificates, and services.", url: "https://search.censys.io" },
+  { name: "Amass", level: "expert", cat: "domain", desc: "OWASP tool for in-depth attack surface mapping and subdomain enumeration.", url: "https://github.com/owasp-amass/amass" },
+  { name: "DNSDumpster", level: "beginner", cat: "domain", desc: "Visual DNS reconnaissance and mapping.", url: "https://dnsdumpster.com" },
+  { name: "Google Lens", level: "beginner", cat: "image", desc: "Best free reverse image and visual search.", url: "https://lens.google.com" },
+  { name: "TinEye", level: "beginner", cat: "image", desc: "Find exact and modified copies of an image, sorted by oldest.", url: "https://tineye.com" },
+  { name: "Yandex Images", level: "beginner", cat: "image", desc: "Often superior for faces and people reverse search.", url: "https://yandex.com/images" },
+  { name: "ExifTool", level: "beginner", cat: "image", desc: "The definitive tool for reading metadata (GPS, camera, dates) from files.", url: "https://exiftool.org" },
+  { name: "Wayback Machine", level: "beginner", cat: "archive", desc: "View historical snapshots of websites. Essential for deleted content.", url: "https://web.archive.org" },
+  { name: "archive.today", level: "beginner", cat: "archive", desc: "Alternative web archive with different coverage.", url: "https://archive.ph" },
+  { name: "Maltego", level: "expert", cat: "framework", desc: "Premier link analysis and visualization platform. Community Edition available.", url: "https://www.maltego.com" },
+  { name: "Intelligence X", level: "intermediate", cat: "breach", desc: "Search leaks, pastes, and darknet archives. Free tier available.", url: "https://intelx.io" },
+  { name: "SunCalc", level: "beginner", cat: "geo", desc: "Calculate sun position and shadows for geolocation and timeline analysis.", url: "https://www.suncalc.org" },
+  { name: "Google Earth", level: "beginner", cat: "geo", desc: "Street View, historical imagery, and 3D for visual confirmation.", url: "https://earth.google.com" },
+  { name: "Recon-ng", level: "intermediate", cat: "framework", desc: "Modular web reconnaissance framework.", url: "https://github.com/lanmaster53/recon-ng" },
+  { name: "Obsidian", level: "intermediate", cat: "framework", desc: "Excellent for investigation notes and relationship graphs.", url: "https://obsidian.md" },
+  { name: "Social Searcher", level: "beginner", cat: "social", desc: "Search public social media posts across platforms.", url: "https://www.social-searcher.com" },
+  { name: "Ahmia", level: "intermediate", cat: "breach", desc: "Search engine for Tor hidden services.", url: "https://ahmia.fi" },
+  { name: "FotoForensics", level: "beginner", cat: "image", desc: "Error Level Analysis and other image forensics tools.", url: "https://fotoforensics.com" },
+  { name: "Subfinder", level: "intermediate", cat: "domain", desc: "Fast passive subdomain discovery tool.", url: "https://github.com/projectdiscovery/subfinder" },
+  { name: "SecurityTrails", level: "intermediate", cat: "domain", desc: "Historical DNS and domain intelligence.", url: "https://securitytrails.com" },
+  { name: "Hunter.io", level: "intermediate", cat: "email", desc: "Find and verify professional email addresses.", url: "https://hunter.io" }
+];
+function render(filtered = tools) {
+  const container = document.getElementById('tools');
+  container.innerHTML = filtered.map(t => `
+    <div class="tool">
+      <h3>${t.name}</h3>
+      <span class="badge ${t.level}">${t.level}</span>
+      <span class="badge">${t.cat}</span>
+      <p>${t.desc}</p>
+      <a href="${t.url}" target="_blank" rel="noopener">Open tool →</a>
+    </div>
+  `).join('');
+}
+function filter() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const lvl = document.getElementById('level').value;
+  const cat = document.getElementById('category').value;
+  const filtered = tools.filter(t =>
+    (!q || t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) || t.cat.includes(q)) &&
+    (!lvl || t.level === lvl) &&
+    (!cat || t.cat === cat)
+  );
+  render(filtered);
+}
+document.getElementById('search').addEventListener('input', filter);
+document.getElementById('level').addEventListener('change', filter);
+document.getElementById('category').addEventListener('change', filter);
+render();
+</script>
+</body>
+</html>

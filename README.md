@@ -1,6 +1,6 @@
 # OSINT Tools Array
 
-![WolfSec Team](https://raw.githubusercontent.com/masterxhackerx420-oss/osint-tools-array/main/wolfsec-team.jpg)
+![WolfSec Team](https://raw.githubusercontent.com/masterxhackerx420-oss/osint-tools-array/main/grok-image-48276120-df53-4bde-8877-5ff0c7aabe2e.jpg)
 
 **A large, curated array of Open Source Intelligence (OSINT) tools for beginners to experts.**
 

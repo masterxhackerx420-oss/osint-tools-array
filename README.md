@@ -1,5 +1,7 @@
 # OSINT Tools Array
 
+![WolfSec Team](https://raw.githubusercontent.com/masterxhackerx420-oss/osint-tools-array/main/wolfsec-team.jpg)
+
 **A large, curated array of Open Source Intelligence (OSINT) tools for beginners to experts.**
 
 > Free-first, categorized, practical. From browser tools you can use in 5 minutes to CLI automation and link-analysis platforms used by professionals.
@@ -7,7 +9,7 @@
 ### Live Interactive Version
 **[https://masterxhackerx420-oss.github.io/osint-tools-array/](https://masterxhackerx420-oss.github.io/osint-tools-array/)**
 
-Searchable & filterable tool list with the LULZ / WolfSec images embedded in the header.
+Searchable & filterable tool list.
 
 ---
 

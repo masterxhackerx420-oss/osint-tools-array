@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://hits.sh/github.com/masterxhackerx420-oss/osint-tools-array/">
+    <img src="https://hits.sh/github.com/masterxhackerx420-oss/osint-tools-array.svg?style=for-the-badge&label=Visitors&color=8b5cf6&logo=eye" alt="Visitors" />
+  </a>
+</p>
+
 # OSINT Tools Array
 
 ![WolfSec Team](https://raw.githubusercontent.com/masterxhackerx420-oss/osint-tools-array/main/grok-image-48276120-df53-4bde-8877-5ff0c7aabe2e.jpg)

@@ -123,6 +123,7 @@ Searchable & filterable tool list.
 | SunCalc | Beginner | Web | Shadow analysis for time/location. | [suncalc.org](https://www.suncalc.org) |
 | Copernicus Browser | Intermediate | Web | Satellite (replacement for Sentinel Hub EO). | [browser.dataspace.copernicus.eu](https://browser.dataspace.copernicus.eu) |
 | OpenStreetMap / Overpass | Intermediate | Web | Detailed mapping. | [openstreetmap.org](https://www.openstreetmap.org) |
+| H1DR4 Police Incident Map | Beginner | Web | Free map of monthly Police.uk street-level records in England and Wales. Pins show approximate published locations. | [h1dr4.dev/map](https://h1dr4.dev/map) |
 
 ### 8. Breach, Leaks & Dark Web
 | Tool | Level | Type | Notes | Link |
